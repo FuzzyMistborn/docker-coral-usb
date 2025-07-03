@@ -6,7 +6,7 @@ steps:
         from_secret: ghcr_pass
     commands:
       - docker login ghcr.io -u fuzzymistborn -p $ghcr_pass
-      - docker build -t ghcr.io/fuzzymistborn/docker-coral-tpu:latest -t .
+      - docker build -t ghcr.io/fuzzymistborn/docker-coral-tpu:latest .
       - docker push --all-tags ghcr.io/fuzzymistborn/docker-coral-tpu
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
